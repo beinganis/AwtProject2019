@@ -1,0 +1,83 @@
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+          <img class="img-responsive" [src]="professors.image">
+      </div>
+      <div class="col-md-4">
+          <h4>{{professors.name  | uppercase }}</h4>
+          <p> {{professors.description}}</p>
+      </div>
+     <div class="col-md-5">
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card headling-card shadow">
+              <ul>
+                  <li *ngFor="let article of articles">
+                      <a href={{article.url}}>{{article.title}}</a>
+                  </li>
+              </ul>
+          </div>
+
+      </div>
+  </div>
+  <br>
+
+  <div class="row">
+      <div class="col-md-8">
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-8">
+            <p >Thesis Topics:</p>
+          </div>
+            <div class="row">
+              <div class="col-md-6">
+                  <select class="mdb-select md-form" (change)="showDescription($event.target.value)">
+                      <option value="" disabled selected>choose Topic</option>
+                      <option *ngFor="let t of thesises" [value]="t.description">
+                          <a>{{t.title}}</a>
+                      </option>
+                  </select>
+                
+              </div>
+              <div class="col-md-6">
+                  <label class="label">{{desc}}</label>
+              </div>
+              &nbsp; &nbsp;
+          </div>
+          <br><br>
+          <div class="row">
+              <br>
+              <div class="col-md-12">
+                  <div class="row">
+                    
+                       <div class="input-group">
+                        <p>Enter CV Refrence : </p>
+                        &nbsp; &nbsp;
+                        <div class="form-group">
+                          <input type="input" [(ngModel)]="cvref" class="form-group"id="inputGroupFile01" >
+                          &nbsp;&nbsp; 
+                          
+                          <label  for="inputGroupFile01">Link your Profile URL</label> 
+                        </div>
+                      </div>
+                        <br><br><br><br>
+                        <div class="col-md-10">
+                    <button style="font-size:13px" (click)="sendLink()" class="btn btn-success" style="cursor:pointer">Submit:
+                    </button>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+      </div>
+  </div>
+</div>
+
+
