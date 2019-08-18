@@ -14,9 +14,19 @@ in this we specially developed nodemailer service by using this service we can d
 
 installation instructions :
 
-Please install node_modules on both client and server ( cmd : npm install )
+Please install node_modules on both client and server 
 
-To run client project please run the cmd : ng serve or npm start 
+In a terminal:
 
-to run server projectv please run the cmd : nodemon or node app.js
+# Initial setup 
+npm install
+
+# Start the AngularCli
+
+ng serve
+
+# Start the server
+npm start or nodemon
+
+
 
